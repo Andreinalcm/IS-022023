@@ -3,7 +3,11 @@ left to right direction
 actor Player
 usecase Start
 usecase Play
+<<<<<<< HEAD
 usecase Beggining
+=======
+
+>>>>>>> probandoRama
 
 Player --> Start
 Player --> Play
