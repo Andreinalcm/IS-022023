@@ -1,0 +1,74 @@
+@startuml Diagrama de Objetos
+
+Object JuegoPanamericanos
+JuegoPanamericanos : localidad = "Valparaíso, Chile"
+JuegoPanamericanos : puntuacion = "10-12, 3-4, 5-7"
+
+object EquipoVenezuela 
+EquipoVenezuela : registro = "VE-5673"
+EquipoVenezuela : nombre = "La Vinotinto"
+
+object EntrenadorVenezuela
+EntrenadorVenezuela : nivelAcreditacion = "Nacional"
+EntrenadorVenezuela : aniosExperiencia = 20
+EntrenadorVenezuela : telefono = "+5841246656"
+EntrenadorVenezuela : nombre = "Carla Díaz"
+EntrenadorVenezuela : direccion = "Caracas, Venezuela"
+
+object Jugador1Venezuela
+Jugador1Venezuela : num = 10
+Jugador1Venezuela : posicion = "Delantero"
+Jugador1Venezuela : esCapitan = true
+Jugador1Venezuela : telefono = "+58412347657"
+Jugador1Venezuela : nombre = "Juan Hernández"
+Jugador1Venezuela : direccion = "Valencia, Venezuela"
+
+object Jugador2Venezuela
+Jugador2Venezuela : num = 15
+Jugador2Venezuela : posicion = "Portero"
+Jugador2Venezuela : esCapitan = false
+Jugador2Venezuela : telefono = "+584124665"
+Jugador2Venezuela : nombre = "Pablo Castillo"
+Jugador2Venezuela : direccion = "Barinas, Venezuela"
+
+object EquipoColombia
+EquipoColombia : registro = "CO-5343"
+EquipoColombia : nombre = "Los Amarillos"
+
+object EntrenadorColombia
+EntrenadorColombia : nivelAcreditacion = "Internacional"
+EntrenadorColombia : aniosExperiencia = 32
+EntrenadorColombia : telefono = "+5797376656"
+EntrenadorColombia : nombre = "Diego Cortés"
+EntrenadorColombia : direccion = "Cali, Colombia"
+
+object Jugador1Colombia
+Jugador1Colombia : num = 10
+Jugador1Colombia : posicion = "Delantero"
+Jugador1Colombia : esCapitan = true
+Jugador1Colombia : telefono = "+57412567657"
+Jugador1Colombia : nombre = "James Rodríguez"
+Jugador1Colombia : direccion = "Bogotá, Colombia"
+
+object Jugador2Colombia
+Jugador2Colombia : num = 15
+Jugador2Colombia : posicion = "Portero"
+Jugador2Colombia : esCapitan = false
+Jugador2Colombia : telefono = "+574127905"
+Jugador2Colombia : nombre = "Gabriel López"
+Jugador2Colombia : direccion = "Cucúta, Colombia"
+
+
+JuegoPanamericanos -- EquipoVenezuela 
+JuegoPanamericanos -- EquipoColombia
+
+EquipoVenezuela *-- EntrenadorVenezuela
+EquipoVenezuela *-- Jugador1Venezuela
+EquipoVenezuela *-- Jugador2Venezuela
+
+EquipoColombia *-- EntrenadorColombia
+EquipoColombia *-- Jugador1Colombia
+EquipoColombia *-- Jugador2Colombia
+
+
+@enduml

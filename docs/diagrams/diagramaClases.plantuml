@@ -1,0 +1,38 @@
+@startuml Diagrama de Clases
+
+class EquipoVoleyball {
+    -registro : string
+    -nombre : string
+    +entrenar() : void
+}
+
+class Juego{
+    -localidad : string
+    -puntuacion : int
+}
+
+class Persona {
+    telefono : string
+    nombre: string
+    direccion : string
+}
+
+class Jugador{
+    -num: int
+    -posicion : string
+    esCapitan : bool
+    +jugar() : void
+}
+
+class Entrenador {
+    nivelAcreditacion : string
+    aniosExperiencia : int
+}
+
+Persona <|-- Jugador 
+Persona <|-- Entrenador
+EquipoVoleyball "1" *-- "6...20" Jugador : Tiene
+EquipoVoleyball "2" -- "1" Juego : Compite en
+EquipoVoleyball "many" *-- "1" Entrenador : Tiene
+
+@enduml
