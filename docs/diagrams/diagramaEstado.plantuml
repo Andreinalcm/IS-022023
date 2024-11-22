@@ -1,0 +1,45 @@
+@startuml
+[*] ---> EncargarProducto : Inicio del Proceso
+hide empty description
+
+state EncargarProducto 
+state PedidoColocado 
+state ValidarPedido 
+state PedidoPagado 
+state ObtenerProducto 
+state EnvioUrgente
+state EnvioOrdinario 
+state PedidoRealizado 
+state ClienteSatisfecho 
+
+state EncargarProducto {
+    [*] --> Encargar : Seleccionar Producto
+    Encargar --> Pagar : Confirmar y Pagar
+    Pagar --> PedidoColocado
+
+}
+
+state PedidoColocado {
+    [*] --> ValidarPedido : Verificar Pedido
+    ValidarPedido --> CobrarPago : Confirmar Pago
+    CobrarPago --> PedidoPagado 
+}
+
+
+state PedidoPagado {
+    [*] --> ObtenerProducto : Preparar Producto
+    ObtenerProducto --> EnvioUrgente : [urgente] Envío Rápido
+    ObtenerProducto --> EnvioOrdinario : [no urgente] Envío Estándar
+    EnvioUrgente --> PedidoRealizado
+    EnvioOrdinario --> PedidoRealizado
+}
+
+
+state PedidoRealizado {
+    [*] --> DarCervezas : Premiar Transportistas
+    DarCervezas --> ClienteSatisfecho : Registrar Cliente Satisfecho
+    DarCervezas --> EnviarRecibo : Generar Recibo
+    ClienteSatisfecho --> [*]
+    EnviarRecibo --> [*]
+}
+@enduml
